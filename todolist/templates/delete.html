@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+    
+        body {
+            background-color: #f5fff8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #6ac97d;
+        }
+        form, .info-box {
+            background-color: #ffffff;
+            border: 2px solid #bff2c3;
+            border-radius: 15px;
+            padding: 20px;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(106, 201, 125, 0.2);
+        }
+        input[type="text"], textarea {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px;
+            width: 250px;
+            margin-top: 10px;
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+        input[type="submit"] {
+            background-color: #6ac97d;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+        input[type="submit"]:hover {
+            background-color: #53b76a;
+        }
+    </style>
+    
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>할 일 삭제</h1>
+        <p>제목: {{ todo_item.title }}</p>
+        <p>설명: {{ todo_item.description }}</p>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="submit" value="삭제">
+        </form>
+    </div>
+</body>
+</html>
