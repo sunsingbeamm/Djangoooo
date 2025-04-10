@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+    
+        body {
+            background-color: #f5fff8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            color: #6ac97d;
+        }
+        form, .info-box {
+            background-color: #ffffff;
+            border: 2px solid #bff2c3;
+            border-radius: 15px;
+            padding: 20px;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(106, 201, 125, 0.2);
+        }
+        input[type="text"], textarea {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px;
+            width: 250px;
+            margin-top: 10px;
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+        input[type="submit"] {
+            background-color: #6ac97d;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+        input[type="submit"]:hover {
+            background-color: #53b76a;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>사용자의 할 일을 입력해주세요</h1>
+        <br> 
+        <form action="/work/" method="post">
+            {% csrf_token %}
+            <label for="titleInput">할 일 제목:</label>
+            <input id="titleInput" type="text" name="title">
+            <br><br>
+            <label for="descriptionInput">할 일 설명:</label>
+            <textarea id="descriptionInput" name="description" rows="4" cols="50"></textarea>
+            <br>
+            <input type="submit" value="제출">
+        </form>
+    </div>
+</body>
+</html>
